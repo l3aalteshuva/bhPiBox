@@ -1,0 +1,61 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            b9:08:b8:c2:98:ee:40:77:1c:3a:e6:10:77:fd:3b:a9
+        Signature Algorithm: ecdsa-with-SHA512
+        Issuer: CN=snakeoil
+        Validity
+            Not Before: Feb 23 17:37:40 2023 GMT
+            Not After : May 28 17:37:40 2025 GMT
+        Subject: CN=www.snakeoil.dom
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (384 bit)
+                pub:
+                    04:0c:f2:10:d8:81:fe:11:c6:c0:87:4f:a9:06:ea:
+                    f0:c2:33:ed:0b:58:19:fc:7a:54:5a:71:28:35:54:
+                    2e:76:fe:9d:d5:14:55:07:f6:08:bd:4d:40:51:49:
+                    7d:c6:cb:e0:29:a2:b0:0d:15:78:e3:e0:e2:81:a0:
+                    65:4b:2a:96:e2:04:30:12:1e:b5:89:de:04:d0:a4:
+                    b3:7a:48:35:49:d8:37:e4:42:18:de:8a:c4:ca:84:
+                    5e:d9:f9:f2:ac:ca:5e
+                ASN1 OID: secp384r1
+                NIST CURVE: P-384
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                7B:72:B0:9B:0C:38:E3:3F:60:B4:82:47:D4:3B:7C:1D:BC:C9:19:0E
+            X509v3 Authority Key Identifier: 
+                keyid:03:72:E6:DB:18:BD:20:0A:C1:CB:A0:CC:C3:7C:E1:DB:AA:BF:B8:53
+                DirName:/CN=snakeoil
+                serial:63:F5:A3:41:9E:99:E6:80:37:DE:26:7A:64:4D:00:BE:79:C2:06:18
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+            X509v3 Subject Alternative Name: 
+                DNS:www.snakeoil.dom
+    Signature Algorithm: ecdsa-with-SHA512
+    Signature Value:
+        30:65:02:31:00:f3:d6:8c:21:29:19:97:da:31:73:26:89:d5:
+        17:31:ac:c1:6a:0e:e5:4e:65:72:2b:b7:8c:fd:99:68:b8:29:
+        0b:fe:d7:a3:f6:f4:58:73:6e:92:70:d5:3f:1f:51:cb:6a:02:
+        30:31:94:2f:fa:ea:8b:a9:3e:3a:57:4c:54:d8:15:72:84:2f:
+        5c:49:7c:fa:0e:57:ac:77:a7:06:7b:fc:b8:53:5d:14:15:09:
+        00:ee:3f:ed:ff:0f:da:75:ba:5a:70:f4:76
+-----BEGIN CERTIFICATE-----
+MIICJzCCAa2gAwIBAgIRALkIuMKY7kB3HDrmEHf9O6kwCgYIKoZIzj0EAwQwEzER
+MA8GA1UEAwwIc25ha2VvaWwwHhcNMjMwMjIzMTczNzQwWhcNMjUwNTI4MTczNzQw
+WjAbMRkwFwYDVQQDDBB3d3cuc25ha2VvaWwuZG9tMHYwEAYHKoZIzj0CAQYFK4EE
+ACIDYgAEDPIQ2IH+EcbAh0+pBurwwjPtC1gZ/HpUWnEoNVQudv6d1RRVB/YIvU1A
+UUl9xsvgKaKwDRV44+DigaBlSyqW4gQwEh61id4E0KSzekg1Sdg35EIY3orEyoRe
+2fnyrMpeo4G8MIG5MAkGA1UdEwQCMAAwHQYDVR0OBBYEFHtysJsMOOM/YLSCR9Q7
+fB28yRkOME4GA1UdIwRHMEWAFANy5tsYvSAKwcugzMN84duqv7hToRekFTATMREw
+DwYDVQQDDAhzbmFrZW9pbIIUY/WjQZ6Z5oA33iZ6ZE0AvnnCBhgwEwYDVR0lBAww
+CgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMBsGA1UdEQQUMBKCEHd3dy5zbmFrZW9p
+bC5kb20wCgYIKoZIzj0EAwQDaAAwZQIxAPPWjCEpGZfaMXMmidUXMazBag7lTmVy
+K7eM/ZlouCkL/tej9vRYc26ScNU/H1HLagIwMZQv+uqLqT46V0xU2BVyhC9cSXz6
+Dlesd6cGe/y4U10UFQkA7j/t/w/adbpacPR2
+-----END CERTIFICATE-----
