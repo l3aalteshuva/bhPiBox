@@ -93,7 +93,7 @@ do
     cp $CUR_LOC/easy-rsa-ca/pki/ca.crt $JUMPBOX_LOC/root/etc/openvpn/client/ca.crt
     cp $CUR_LOC/easy-rsa-ca/pki/issued/client$i.crt $JUMPBOX_LOC/root/etc/openvpn/client/client$i.crt
     cp $CUR_LOC/easy-rsa-ca/pki/private/client$i.key $JUMPBOX_LOC/root/etc/openvpn/client/client$i.key
-    cp $CUR_LOC/easy-rsa-openvpn/ta.key $JUMPBOX_LOC/root/etc/openvpn/client/ta.key
+    cp $CUR_LOC/server/ta.key $JUMPBOX_LOC/root/etc/openvpn/client/ta.key
     #cp /tmp/client_template.conf /opt/client_configs/client$i/client.conf
 
     KEY_DIR=$JUMPBOX_LOC/root/etc/openvpn/client/
