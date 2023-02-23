@@ -1,0 +1,5 @@
+*.img
+jumpboxes/*
+server/*
+easy-rsa-ca/*
+easy-rsa-openvpn/*
