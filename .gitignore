@@ -1,5 +1,7 @@
 *.img
 jumpboxes/*
-server/*
-easy-rsa-ca/*
-easy-rsa-openvpn/*
+server/ta.key
+server/server.key
+easy-rsa-ca/pki/private/*.key
+easy-rsa-ca/pki/reqs/*
+easy-rsa-openvpn/
