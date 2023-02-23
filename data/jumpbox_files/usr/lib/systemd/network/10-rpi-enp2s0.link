@@ -1,0 +1,13 @@
+# this should match the second Ethernet iface on the pi which should be added by PCIe on the SEEED Studio box
+# calculate this if it changes by running:
+#    udevadm test /sys/class/net/[iface] | grep ID_PATH
+
+[Match]
+# Testbench pi's ethernet dongle was here (upper right bank as you look at the ethernet ports head-on)
+#Path=platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.1:1.0
+
+# The SEEED Studio's second Ethernet port (right) 
+Path=platform-fd500000.pcie-pci-0000:01:00.0-usb-0:3:1.0
+
+[Link]
+Name=enp2s0

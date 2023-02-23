@@ -1,0 +1,21 @@
+###################### Customer Rules #############################
+# Runs a network setup script before network is configured at boot#
+###################################################################
+#
+# This kicks off a script to create the customer namespace (cust_rules.sh), which then kicks off the NACBypass/DHCP detection logic inside
+# the customer namespace
+#
+
+[Unit]
+Before=network-pre.target
+Wants=network-pre.target
+Description=Intercept Networking Configuration
+
+[Service]
+Type=oneshot
+KillMode=process
+ExecStart=/opt/cust_rules.sh
+
+[Install]
+WantedBy=network.target
+###########################################

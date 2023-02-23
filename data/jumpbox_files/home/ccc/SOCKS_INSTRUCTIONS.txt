@@ -1,0 +1,18 @@
+There should be a socks proxy running already inside of the customer namespace.  Verify by running:
+    ip netns exec customer netstat -nap | grep 2222
+
+if you don't see anything there, you maybe want to figure out why it's not running with:
+    systemctl start socksproxy
+
+If everything is operating as expected, you can utilize the socks proxy by way of this command:
+
+    ssh -L 2222:169.254.2.2:2222 ccc@[OPENVPN_IP_FOR_JUMPBOX] && ssh -D 8080 ccc@127.0.0.1 -p 2222
+
+That command will create a ssh local port forward on your host on port 2222 to the ssh server running on the customer namespace (169.254.2.2:2222), and then will create an SSH dynamic port forward service on your local machine on port 8080 by connecting to the customer namespace's locally-forwarded port on localhost:2222.
+
+
+TL;DR:
+
+    ssh -L 2222:169.254.2.2:2222 ccc@[OPENVPN_IP_FOR_JUMPBOX] && ssh -D 8080 ccc@127.0.0.1 -p 2222
+
+then point whatever you want to hit the customer network at localhost:8080 with proxychains or similar.

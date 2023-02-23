@@ -1,0 +1,10 @@
+# renames the primary Broadcom ethernet on a Pi to enp1s0 rather than default eth0
+# on Ubuntu 22, you have to do some extras for this to work which are in the pi element of the jumpbox setup script
+
+[Match]
+Driver=bcmgenet smsc95xx lan78xx
+#OriginalName=*
+Path=platform-fd580000.ethernet
+
+[Link]
+Name=enp1s0

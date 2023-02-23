@@ -1,0 +1,56 @@
+#cloud-config
+power-state:
+  delay: now
+  mode: poweroff
+  message: setup complete, powering down
+
+hostname: $HOSTNAME
+
+user:
+  name: ccc
+  passwd: $PASSWORD
+  lock_passwd: false
+  groups: sudo,adm
+
+# this needs to go off BEFORE the package stuff or the package updates fail.
+timezone: US/Eastern
+ntp:
+  ntp_client: systemd-timesyncd
+  enabled: true
+  servers:
+    - ntp.ubuntu.com
+
+package_update: true
+package_upgrade: false
+packages:
+  - openssh-server
+  - openvpn
+  - tmux
+  - screen
+  - byobu
+  - nmap
+  - sqlmap
+  - net-tools
+  - traceroute
+  - bridge-utils
+  - macchanger
+  - wfuzz
+  - dirb
+  - jq
+  - iptables-persistent
+  - cryptsetup
+  - git
+  - linux-modules-extra-raspi
+  - fake-hwclock
+
+# we needed to pass some stuff into the jumpbox_cloudinit.sh file -- the env method is .... adequate?
+
+runcmd:
+  - cp -r /boot/firmware/nocloud/files/* /
+  - timedatectl set-ntp true
+  - timedatectl set-timezone EST
+  - bash -c "while [[ ! \"yes\" -eq `timedatectl show | grep NTPSynchronized | awk -F= '{print \$2}'` ]]; do echo \"Waiting for NTP sync...\"; done;"
+  - systemctl enable fake-hwclock
+  - systemctl start fake-hwclock
+  - timedatectl set-ntp false
+  - SERVER_ADDRESS=$SERVER_ADDRESS bash -x /opt/jumpbox_cloudinit.sh 2>&1 | tee -a /var/log/cloud-init-deployer.log

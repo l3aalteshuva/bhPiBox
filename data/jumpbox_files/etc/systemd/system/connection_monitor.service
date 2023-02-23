@@ -1,0 +1,21 @@
+###################### Customer Rules #############################
+# Runs a network setup script before network is configured at boot#
+###################################################################
+#
+# This kicks off a script to create the customer namespace (cust_rules.sh), which then kicks off the NACBypass/DHCP detection logic inside
+# the customer namespace
+#
+
+[Unit]
+After=network-online.target
+Wants=network-online.target
+Description=LTE Connection Monitor
+
+[Service]
+Type=oneshot
+KillMode=process
+ExecStart=/usr/bin/python3 /opt/connection_monitor.py
+
+[Install]
+WantedBy=network-online.target
+###########################################
