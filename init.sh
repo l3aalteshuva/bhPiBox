@@ -30,7 +30,7 @@ EOF
 # change to the rsa-ca and build the CA
 cd easy-rsa-ca
 ./easyrsa init-pki
-./easyrsa build-ca nopass
+./easyrsa build-ca
 
 # create an openvpn server certificate, change to that dir, create the server keys
 mkdir $CUR_LOC/easy-rsa-openvpn
@@ -48,6 +48,8 @@ set_var EASYRSA_REQ_CN         "www.snakeoil.dom"
 EOF
 cd $CUR_LOC/easy-rsa-openvpn/
 ./easyrsa init-pki
+
+# we don't want the server to have a password as the OpenVPN service needs to start/stop on its own
 ./easyrsa gen-req server nopass
 
 # create the ta key in the openvpn server dir
