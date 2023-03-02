@@ -46,7 +46,7 @@ packages:
 # we needed to pass some stuff into the jumpbox_cloudinit.sh file -- the env method is .... adequate?
 
 runcmd:
-  - cp -r /boot/firmware/nocloud/files/* /
+  - cp -r /boot/firmware/nocloud/files/root/* /
   - timedatectl set-ntp true
   - timedatectl set-timezone EST
   - bash -c "while [[ ! \"yes\" -eq `timedatectl show | grep NTPSynchronized | awk -F= '{print \$2}'` ]]; do echo \"Waiting for NTP sync...\"; done;"
