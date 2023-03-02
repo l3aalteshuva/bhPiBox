@@ -14,15 +14,15 @@ cat <<EOF > /etc/netplan/50-cloud-init.yaml
           dhcp6: false
           accept-ra: false
           macaddress: 52:54:00:6b:3c:5a
-        usb0:
-          addresses:
-            - 192.168.0.2/24
-          routes:
-            - to: default
-              via: 192.168.0.1
-              metric: 1
-            - to: $SERVER_ADDRESS
-              via: 192.168.0.1
+        #usb0:
+        #  addresses:
+        #    - 192.168.0.2/24
+        #  routes:
+        #    - to: default
+        #      via: 192.168.0.1
+        #      metric: 1
+        #    - to: $SERVER_ADDRESS
+        #      via: 192.168.0.1
       version: 2
 EOF
 cd /opt && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
