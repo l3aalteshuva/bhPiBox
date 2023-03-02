@@ -91,8 +91,8 @@ do
     #./easyrsa import-req pki/reqs/${OPNAME}_client${i}.req ${OPNAME}_client${i}
     ./easyrsa sign-req client ${OPNAME}_client${i}
     cp $CUR_LOC/easy-rsa-ca/pki/ca.crt $JUMPBOX_LOC/root/etc/openvpn/client/ca.crt
-    cp $CUR_LOC/easy-rsa-ca/pki/issued/client$i.crt $JUMPBOX_LOC/root/etc/openvpn/client/client$i.crt
-    cp $CUR_LOC/easy-rsa-ca/pki/private/client$i.key $JUMPBOX_LOC/root/etc/openvpn/client/client$i.key
+    cp $CUR_LOC/easy-rsa-ca/pki/issued/${OPNAME}_client$i.crt $JUMPBOX_LOC/root/etc/openvpn/client/client$i.crt
+    cp $CUR_LOC/easy-rsa-ca/pki/private/${OPNAME}_client$i.key $JUMPBOX_LOC/root/etc/openvpn/client/client$i.key
     cp $CUR_LOC/server/ta.key $JUMPBOX_LOC/root/etc/openvpn/client/ta.key
     #cp /tmp/client_template.conf /opt/client_configs/client$i/client.conf
 
