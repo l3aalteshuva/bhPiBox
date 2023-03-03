@@ -3,9 +3,9 @@ export OPNAME=$1
 export CLIENTS=1
 export C2_DOMAIN=$2
 export ISO_FILE_LOCATION=$3
-#export PLAINTEXT_PASSWORD=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c13;echo;)
+export PLAINTEXT_PASSWORD=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c13;echo;)
 # DEBUG DO NOT USE IN PROD
-export PLAINTEXT_PASSWORD="CrossTesting!"
+#export PLAINTEXT_PASSWORD="CrossTesting!"
 export PASSWORD=`openssl passwd -6 $PLAINTEXT_PASSWORD`
 export HOSTNAME=$(< /dev/urandom tr -dc A-Z-0-9 | head -c8;echo;)
 export TMP_LOC=`pwd`/data/state/tmp/
