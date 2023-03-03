@@ -1,23 +1,7 @@
-#!/bin/bash
+#!/bin/bash -x
 # this file is run by /etc/systemd/system/cust_rules.service prior to networkd but after the network devices are detected and populated
 # the purpose is to intercept the network during boot, construct a network namespace named "customer" and place the ethernet devices
 # in this namespace, then run NAC bypass or DHCP as required to gain access to the network.
-echo "User: `whoami`" >> /tmp/test
-echo "Network Status:" >> /tmp/test
-echo "Carrier ENP1S0: `cat /sys/class/net/enp1s0/carrier`" >> /tmp/test
-echo "Carrier ENP2S0: `cat /sys/class/net/enp2s0/carrier`" >> /tmp/test
-USB0_CARRIER=cat /sys/class/net/usb0/carrier
-if [[] $? -gt 0 ]]
-then
-  USB0_CARRIER=0
-fi
-echo "Carrier USB0: $USB_CARRIER" >> /tmp/test
-
-networkctl -s -a >> /tmp/test
-echo "" >> /tmp/test
-
-ifconfig enp1s0 >> /tmp/test
-ifconfig enp2s0 >> /tmp/test
 
 # disable ipv6
 sysctl -w net.ipv6.conf.all.disable_ipv6=1
