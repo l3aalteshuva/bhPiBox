@@ -64,8 +64,8 @@ cat <<EOF >/tmp/client_template.conf
 client
 dev tun
 proto tcp-client
-# socks-proxy will always be local:1111 where the socks5 proxy side of the websockets bridge is.
-socks-proxy 127.0.0.1 1111
+# socks-proxy will always be 169.254.2.2:1111 where the socks5 proxy side of the websockets bridge is.
+socks-proxy 169.254.2.2 1111
 # remote server will always be the other side of the socks5->websockets bridge port 1194
 remote 127.0.0.1 1194
 nobind
