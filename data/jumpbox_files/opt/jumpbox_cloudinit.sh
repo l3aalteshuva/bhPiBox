@@ -75,3 +75,6 @@ rm -rf /boot/firmware/nocloud
 
 # delete self.
 rm /opt/jumpbox_cloudinit.sh
+
+# shutdown
+init 0
