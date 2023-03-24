@@ -1,0 +1,15 @@
+#########################################  
+#          Socks SSHd Server            #
+#  This is designed only to provide     #
+#  a socks proxy out to the customer    #
+#  network. Do not use for other stuff  #
+#########################################
+Include /etc/ssh/sshd_config.d/*.conf
+Port 2222
+ListenAddress 169.254.2.2
+PasswordAuthentication yes
+KbdInteractiveAuthentication no
+UsePAM yes
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
