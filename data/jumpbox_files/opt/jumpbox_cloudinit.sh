@@ -47,6 +47,7 @@ sed -i /etc/systemd/system/nessusd.service -e 's/ExecStart=/ExecStart=ip netns e
 netplan apply
 #systemctl -f enable socksproxy
 #systemctl -f enable openvpn@client
+systemctl -f enable sshd_customer
 systemctl -f enable ovpn_wrapper
 systemctl -f enable cust_rules.service
 systemctl -f enable connection_monitor.service
