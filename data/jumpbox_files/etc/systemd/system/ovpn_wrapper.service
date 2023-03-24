@@ -1,0 +1,26 @@
+###################### Customer Rules #############################
+# Runs a network setup script before network is configured at boot#
+###################################################################
+#
+# This kicks off a script to create the customer namespace (cust_rules.sh), which then kicks off the NACBypass/DHCP detection logic inside
+# the customer namespace
+#
+
+[Unit]
+#Before=systemd-user-sessions.service
+#After=network-online.target
+#Wants=network-online.target
+After=cust_rules.service
+Description=Wrap OpenVPN Start/Config
+
+[Service]
+Type=exec
+WorkingDirectory=/etc/openvpn/
+KillMode=process
+Restart=always
+RestartSec=10
+ExecStart=nohup bash -x /opt/openvpn.sh 2>&1 >> /var/log/openvpn_systemd.log &
+
+#[Install]
+#WantedBy=multi-user.target
+###########################################
