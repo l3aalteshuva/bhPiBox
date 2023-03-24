@@ -45,8 +45,9 @@ sed -i /etc/systemd/system/nessusd.service -e 's/ExecStart=/ExecStart=ip netns e
 
 # After this you may lose internet unless the VPN is setup.
 netplan apply
-systemctl -f enable socksproxy
-systemctl -f enable openvpn@client
+#systemctl -f enable socksproxy
+#systemctl -f enable openvpn@client
+systemctl -f enable ovpn_wrapper
 systemctl -f enable cust_rules.service
 systemctl -f enable connection_monitor.service
 systemctl -f disable systemd-resolved
