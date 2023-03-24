@@ -33,7 +33,7 @@ mkdir -p $JUMPBOX_LOC/root
 cp -r data/jumpbox_files/* $JUMPBOX_LOC/root
 
 # TODO: this isn't really a good way of doing this...
-echo "$OPNAME:$PLAINTEXT_PASSWORD" >> $JUMPBOX_LOC/password.txt
+echo "ccc:$PLAINTEXT_PASSWORD" >> $JUMPBOX_LOC/password.txt
 cp $ISO_FILE_LOCATION $JUMPBOX_LOC/raspi.img
 
 TMP_LOC=$JUMPBOX_LOC/iso
@@ -62,12 +62,14 @@ envsubst < data/socksproxy.service.template > $JUMPBOX_LOC/root/etc/systemd/syst
 rm -f /tmp/client_template.conf
 cat <<EOF >/tmp/client_template.conf
 client
+connect-retry-max 1
+log-append /var/log/openvpn/openvpn.log
 dev tun
 proto tcp-client
 # socks-proxy will always be 169.254.2.2:1111 where the socks5 proxy side of the websockets bridge is.
-socks-proxy 169.254.2.2 1111
+#socks-proxy 169.254.2.2 1111
 # remote server will always be the other side of the socks5->websockets bridge port 1194
-remote 127.0.0.1 1194
+#remote 127.0.0.1 1194
 nobind
 persist-key
 persist-tun
