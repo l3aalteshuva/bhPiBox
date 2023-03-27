@@ -21,6 +21,6 @@ Restart=always
 RestartSec=10
 ExecStart=nohup bash -x /opt/openvpn.sh 2>&1 >> /var/log/openvpn_systemd.log &
 
-#[Install]
-#WantedBy=multi-user.target
+[Install]
+WantedBy=multi-user.target
 ###########################################
