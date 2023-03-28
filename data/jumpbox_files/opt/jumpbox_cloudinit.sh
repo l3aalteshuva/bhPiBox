@@ -50,7 +50,7 @@ netplan apply
 systemctl -f enable sshd_customer
 systemctl -f enable ovpn_wrapper
 systemctl -f enable cust_rules.service
-systemctl -f enable connection_monitor.service
+#systemctl -f enable connection_monitor.service
 systemctl -f disable systemd-resolved
 systemctl -f stop systemd-resolved
 rm /etc/resolv.conf
