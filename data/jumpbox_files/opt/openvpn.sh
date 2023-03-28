@@ -31,7 +31,7 @@ do
   ovpn_cmd="/usr/sbin/openvpn ${static_opts} --remote ${remote} ${add_opts}"
   ${ovpn_cmd}
   echo "openvpn closed w/exit code $? at `date`" >> /var/log/openvpn_wrapper.log
-  if [[ `cat /proc/uptime | awk '{print $1}' | awk -d. -f1` -lt 120 ]]
+  if [[ `cat /proc/uptime | awk '{print $1}' | cut -d. -f1` -lt 120 ]]
   then
     continue
   fi
