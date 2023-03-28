@@ -26,6 +26,7 @@ Usage
 ```
 # Generate the jumpbox image
 sudo ./setup-jumpbox.sh TEST_PI chevychasetrusts.com ubuntu-22.04.1-preinstalled-server-arm64+raspi.img
+# You will be prompted for the CA encryption key - it's in dashlane.
 
 # Plug in the Raspi CM4 board via the USBC port while the BOOT and GND pins are jumpered.
 sudo /utils/rpiboot
