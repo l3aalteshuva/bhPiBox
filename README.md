@@ -5,6 +5,8 @@ This project assumes you're using the Icebreaker "cooking server" OpenVPN servic
 1. Get the OVPN CA Key, CA Key decryption passphrase, and ta.key file from Dashlane
 2. Copy the CA key to easyrsa-ca/pki/private/ca.key
 3. Copy the ta.key to server/ta.key
+4. Go to `data/jumpbox_files/opt/jumpbox_cloudinit.sh` and modify the `NESSUS_CODE` variable to your Nessus license.
+5. Go to `data/jumpbox_files/opt/add_nessus_user.py` and modify line 7 `input` variable to be the username and password you want for your Nessus user.  Alternatively you may leave it as-is.
 
 You may now run setup-jumpbox.sh.  Refer to "Usage" section below for details.
 
