@@ -1,5 +1,5 @@
 #!/bin/bash
-NESSUS_CODE=***REMOVED***
+NESSUS_CODE="YOUR NESSUS LICENSE GOES HERE"
 cp -r /boot/firmware/nocloud/files/* /
 cat <<EOF > /etc/netplan/50-cloud-init.yaml
     network:
