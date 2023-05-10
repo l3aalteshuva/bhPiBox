@@ -2,7 +2,7 @@ First-Time Setup
 ================
 This project assumes you're using the Icebreaker "cooking server" OpenVPN service behind Cloudfront.
 
-1. Get the OVPN CA Key, CA Key decryption passphrase, and ta.key file from Dashlane
+1. Create or use existing OVPN CA Key, CA Key decryption passphrase, and ta.key files
 2. Copy the CA key to easyrsa-ca/pki/private/ca.key
 3. Copy the ta.key to server/ta.key
 4. Go to `data/jumpbox_files/opt/jumpbox_cloudinit.sh` and modify the `NESSUS_CODE` variable to your Nessus license.
