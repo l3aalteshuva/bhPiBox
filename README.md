@@ -1,3 +1,7 @@
+Credit
+======
+Thank you to CrossCountry Consulting (https://www.crosscountry-consulting.com/) for allowing me to Open-Source this project which was developed as a part of their Offensive Security program.
+
 First-Time Setup
 ================
 This project assumes you're using the Icebreaker "cooking server" OpenVPN service behind Cloudfront.
