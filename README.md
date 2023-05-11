@@ -1,3 +1,7 @@
+Telekino
+=========
+Telekino is designed to automate the task of producing an operationally-secure remote-access device for use in enterprise network security testing operations.  Telekino currently creates images for the Raspberry Pi based SEEED Studio CM4 Router, but will be expanded to other hardware configurations in the future.
+
 Credit
 ======
 Thank you to CrossCountry Consulting (https://www.crosscountry-consulting.com/) for allowing me to Open-Source this project which was developed as a part of their Offensive Security program.
